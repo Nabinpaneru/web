@@ -29,7 +29,7 @@
     
                         <div class="text-center mt-4">
                             <div class="mb-3">
-                                <a href="index.html" class="auth-logo">
+                                <a href="{{route('login')}}" class="auth-logo">
                                     <img src="{{ asset('logo/logo.png') }}" height="65" class="logo-dark mx-auto" alt="">
                                   
                                 </a>

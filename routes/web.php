@@ -19,8 +19,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+////// Admin Route //////
+Route::controller(AdminController::class)->group(function () {
+    Route::get('/logout',[AdminController::class,'destroy'])->name('admin.logout');
+    Route::get('/admin-profile',[AdminController::class,'profile'])->name('admin.profile');
+    Route::get('/admin-edit',[AdminController::class,'edit'])->name('admin.edit');
+});
 
-Route::get('/admin/logout',[AdminController::class,'destroy'])->name('admin.logout');
+///// end route ///
+
 
 Route::get('/dashboard', function () {
     return view('admin.index');
