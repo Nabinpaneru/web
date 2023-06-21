@@ -12,30 +12,36 @@
                         <form action="{{route('admin.update')}}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Name</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1" name="name"
-                                    value="{{ $admin->name }}">
+                                <label for="exampleInputEmail1">tittle</label>
+                                <input type="text" class="form-control" id="exampleInputEmail1" name="tittle"
+                                    value="{{ $homeslide->tittle }}">
 
                             </div><br>
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Email address</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" name="email"
-                                    value="{{ $admin->email }}">
+                                <label for="exampleInputEmail1">short_tittle</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1" name="short_tittle"
+                                    value="{{ $homeslide->short_tittle }}">
 
                             </div><br>
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Image</label>
-                                <input type="file" class="form-control" id="image" name="image">
+                                <label for="exampleInputEmail1">vedio_url</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1" name="vedio_url"
+                                    value="{{ $homeslide->vedio_url }}">
+
+                            </div><br>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">home_image</label>
+                                <input type="file" class="form-control" id="image" name="home_image">
 
                             </div><br>
                             <div class="form-group">
                                 <label for="exampleInputEmail1"></label>
-                                <img class="card-img-top img-fluid rounded avatar-lg" id="showImage" src="{{ asset('images/'.$admin->image) }}" alt="">
+                                <img class="card-img-top img-fluid rounded avatar-lg" id="showImage" src="{{ asset('logo/nabin.jpg') }}" alt="">
 
                             </div><br>
                             
                             
-                            <button type="submit" class="btn btn-info">Update Profile</button>
+                            <button type="submit" class="btn btn-info">Update Home slide</button>
 
 
                         </form>
