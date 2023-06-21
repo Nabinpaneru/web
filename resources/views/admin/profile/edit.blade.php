@@ -9,7 +9,7 @@
                 <div class="row">
                     <div class="col-lg-6">
 
-                        <form action="#" method="post">
+                        <form action="{{route('admin.update')}}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Name</label>
@@ -25,7 +25,7 @@
                             </div><br>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Image</label>
-                                <input type="file" class="form-control" id="image" name="email">
+                                <input type="file" class="form-control" id="image" name="image">
 
                             </div><br>
                             <div class="form-group">

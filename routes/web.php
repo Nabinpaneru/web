@@ -24,7 +24,11 @@ Route::controller(AdminController::class)->group(function () {
     Route::get('/logout',[AdminController::class,'destroy'])->name('admin.logout');
     Route::get('/admin-profile',[AdminController::class,'profile'])->name('admin.profile');
     Route::get('/admin-edit',[AdminController::class,'edit'])->name('admin.edit');
+    Route::post('/admin-update',[AdminController::class,'update'])->name('admin.update');
+    Route::get('/admin-password',[AdminController::class,'password'])->name('change.password');
+    Route::post('/admin-update-password',[AdminController::class,'update_password'])->name('admin.update_password');
 });
+
 
 ///// end route ///
 
@@ -37,6 +41,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
 require __DIR__.'/auth.php';
