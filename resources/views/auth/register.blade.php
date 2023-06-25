@@ -53,6 +53,9 @@
                                     <div class="col-12">
                                         <input class="form-control" type="email" id="email"  name="email" required="" placeholder="Email">
                                     </div>
+                                    @error('email')
+                                    <p class="text-danger">{{ $message }}</p>
+                                @enderror
                                 </div>
     
                                 

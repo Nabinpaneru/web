@@ -9,17 +9,17 @@
                 <div class="row">
                     <div class="col-lg-6">
 
-                        <form action="{{route('home.update')}}" method="post" enctype="multipart/form-data">
+                        <form action="{{route('about.update')}}" method="post" enctype="multipart/form-data">
                             @csrf
 
 
                             <input type="hidden" class="form-control"  name="id"
-                                    value="{{ $homeslide->id }}">
+                                    value="{{ $aboutpage->id }}">
 
                             <div class="form-group">
                                 <label for="exampleInputEmail1">tittle</label>
                                 <input type="text" class="form-control" id="exampleInputEmail1" name="tittle"
-                                    value="{{ $homeslide->tittle }}">
+                                    value="{{ $aboutpage->tittle }}">
 
                             </div><br>
 
@@ -28,28 +28,34 @@
                             <div class="form-group">
                                 <label for="exampleInputEmail1">short_tittle</label>
                                 <input type="text" class="form-control" id="exampleInputEmail1" name="short_tittle"
-                                    value="{{ $homeslide->short_tittle }}">
+                                    value="{{ $aboutpage->short_tittle }}">
 
                             </div><br>
                             <div class="form-group">
-                                <label for="exampleInputEmail1">vedio_url</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1" name="vedio_url"
-                                    value="{{ $homeslide->vedio_url }}">
+                                <label for="exampleInputEmail1">short_description</label>
+                                <input type="text" class="form-control" id="exampleInputEmail1" name="short_description"
+                                    value="{{ $aboutpage->short_description }}">
 
                             </div><br>
                             <div class="form-group">
-                                <label for="exampleInputEmail1">home_image</label>
-                                <input type="file" class="form-control" id="image" name="home_image">
+                                <label for="exampleInputEmail1">long_description</label>
+                                <input type="text" class="form-control" id="exampleInputEmail1" name="long_description""
+                                    value="{{ $aboutpage->long_description }}">
+
+                            </div><br>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">About_image</label>
+                                <input type="file" class="form-control" id="image" name="about_image">
 
                             </div><br>
                             <div class="form-group">
                                 <label for="exampleInputEmail1"></label>
-                                <img class="card-img-top img-fluid rounded avatar-lg" id="showImage" src="{{ asset('homeslideimg/'.$homeslide->home_image ) }}" alt="">
+                                <img class="card-img-top img-fluid rounded avatar-lg" id="showImage" src="{{ asset('aboutpageimg/'.$aboutpage->about_image ) }}" alt="">
 
                             </div><br>
                             
                             
-                            <button type="submit" class="btn btn-info">Update Home slide</button>
+                            <button type="submit" class="btn btn-info">Update About page</button>
 
 
                         </form>

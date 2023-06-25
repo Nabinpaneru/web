@@ -4,6 +4,8 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Home\HomeSlideController;
+use App\Http\Controllers\Home\AboutController;
+use App\Http\Controllers\Home\MultiController;
 
 
 
@@ -23,7 +25,7 @@ Route::get('/', function () {
 });
 Route::get('/frontend-web', function () {
     return view('frontend.index');
-});
+})->name('frontend.index');
 
 ////// Admin Route //////
 Route::controller(AdminController::class)->group(function () {
@@ -35,10 +37,28 @@ Route::controller(AdminController::class)->group(function () {
     Route::post('/admin-update-password',[AdminController::class,'update_password'])->name('admin.update_password');
 });
 
+////home slider///
 Route::controller(HomeSlideController::class)->group(function () {
     Route::get('/homeslide',[HomeSlideController::class,'homeslider'])->name('home.slide');
+    Route::post('/homeslide/update',[HomeSlideController::class,'homeslider_update'])->name('home.update');
+    
   
 });
+
+////About page///
+Route::controller(AboutController::class)->group(function () {
+    Route::get('/aboutpage',[AboutController::class,'aboutpage'])->name('about.page');
+    Route::post('/aboutpage/update',[AboutController::class,'about_update'])->name('about.update');
+    Route::get('/about',[AboutController::class,'aboutheader'])->name('home.about');
+  });
+
+////Multi image///
+Route::controller(MultiController::class)->group(function () {
+    Route::get('/multi/image',[MultiController::class,'multi'])->name('multi.image');
+   
+  });
+
+
 
 
 ///// end route ///
