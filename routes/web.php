@@ -54,7 +54,13 @@ Route::controller(AboutController::class)->group(function () {
 
 ////Multi image///
 Route::controller(MultiController::class)->group(function () {
-    Route::get('/multi/image',[MultiController::class,'multi'])->name('multi.image');
+    Route::get('/multi-image',[MultiController::class,'multi'])->name('multi.image');
+    Route::post('/save-image',[MultiController::class,'multi_save'])->name('multi.save');
+    Route::get('/all-image',[MultiController::class,'all_image'])->name('All.image');
+    Route::get('/edit-image-{id}',[MultiController::class,'multi_edit'])->name('image.edit');
+    Route::post('/update-image-{id}',[MultiController::class,'multi_update'])->name('image.update');
+    Route::get('/image-delete-{id}',[MultiController::class,'multi_delete'])->name('image.delete');
+   
    
   });
 

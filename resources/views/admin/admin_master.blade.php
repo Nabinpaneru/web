@@ -24,6 +24,7 @@
         <link href=" {{ asset('assets/css/icons.min.css')}}  " rel="stylesheet" type="text/css" />
         <!-- App Css-->
         <link href=" {{ asset('assets/css/app.min.css')}}  " id="app-style" rel="stylesheet" type="text/css" />
+        
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
      
             
@@ -112,7 +113,9 @@
 
         <!-- App js -->
         <script src="{{ asset('assets/js/app.js') }}"></script>
-      
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+        <script src="{{ asset('assets/js/code.js') }}"></script>
     </body>
 
 </html>
