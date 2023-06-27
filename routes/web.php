@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Home\HomeSlideController;
 use App\Http\Controllers\Home\AboutController;
 use App\Http\Controllers\Home\MultiController;
+use App\Http\Controllers\Home\ProtfolioController;
 
 
 
@@ -63,6 +64,18 @@ Route::controller(MultiController::class)->group(function () {
    
    
   });
+
+ ////Protfolio Setup///
+Route::controller(ProtfolioController::class)->group(function () {
+    Route::get('/all-protfolio',[ProtfolioController::class,'protfolio_all'])->name('all.protfolio');
+    Route::get('/add-protfolio',[ProtfolioController::class,'protfolio_add'])->name('add.protfolio');
+    Route::post('/save-protfolio',[ProtfolioController::class,'protfolio_save'])->name('save.protfolio');
+    Route::get('/edit-protfolio-{id}',[ProtfolioController::class,'protfolio_edit'])->name('edit.protfolio');
+    Route::post('/update-protfolio-{id}',[ProtfolioController::class,'protfolio_update'])->name('update.protfolio');
+    Route::get('/delete-protfolio-{id}',[ProtfolioController::class,'protfolio_delete'])->name('delete.protfolio');
+    
+  
+}); 
 
 
 

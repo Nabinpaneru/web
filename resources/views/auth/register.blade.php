@@ -65,7 +65,9 @@
                                         <input class="form-control" type="password" id="password" name="password"  required="" placeholder="Password">
                                     </div>
                                 </div>
-
+                                @error('password')
+                                <p class="text-danger">{{ $message }}</p>
+                            @enderror
 
                                 <div class="form-group mb-3 row">
                                     <div class="col-12">

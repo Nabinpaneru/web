@@ -28,19 +28,19 @@
                             <div class="form-group">
                                 <label for="exampleInputEmail1">short_tittle</label>
                                 <input type="text" class="form-control" id="exampleInputEmail1" name="short_tittle"
-                                    value="{{ $aboutpage->short_tittle }}">
+                                    value="{{ $aboutpage->short_tittle }}" >
 
                             </div><br>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">short_description</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1" name="short_description"
-                                    value="{{ $aboutpage->short_description }}">
+                                <textarea type="text" class="form-control" id="exampleInputEmail1" name="short_description"
+                                    value="" rows="5">{{ $aboutpage->short_description }}</textarea>
 
                             </div><br>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">long_description</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1" name="long_description""
-                                    value="{{ $aboutpage->long_description }}">
+                                <textarea type="text-area" class="form-control" id="exampleInputEmail1" name="long_description""
+                                    value="" rows="5">{{ $aboutpage->long_description }}</textarea>
 
                             </div><br>
                             <div class="form-group">

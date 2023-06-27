@@ -18,6 +18,8 @@
         <link href="{{asset('assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
         <!-- App Css-->
         <link href="{{asset('assets/css/app.min.css')}}" id="app-style" rel="stylesheet" type="text/css" />
+ 
+            
 
     </head>
 
@@ -43,6 +45,11 @@
                         
                              <form method="POST" action="{{ route('login') }}">
                                   @csrf
+                                  @if(Session::has('error'))
+                                  <div class="text-danger" role="alert">
+                                  <p> {{ Session::get('error')}}</p>
+                                  </div>
+                                  @endif
 
     
                                 <div class="form-group mb-3 row">

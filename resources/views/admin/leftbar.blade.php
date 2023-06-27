@@ -34,13 +34,26 @@
                         <span>About page Setup</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="{{ route('about.page') }}">about page</a></li>
-                        <li><a href="{{ route('multi.image') }}">multi image</a></li>
+                        <li><a href="{{ route('about.page') }}">About page</a></li>
+                        <li><a href="{{ route('multi.image') }}">Add multi image</a></li>
                         <li><a href="{{ route('All.image') }}">All multi image</a></li>
 
 
                     </ul>
                 </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="ri-mail-send-line"></i>
+                        <span>Protfolio page Setup</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="{{ route('all.protfolio') }}">All Protfolio</a></li>
+                        <li><a href="{{ route('add.protfolio') }}">Add Protfolio</a></li>
+                       
+
+                    </ul>
+                </li>
+
 
         </div>
         <!-- Sidebar -->

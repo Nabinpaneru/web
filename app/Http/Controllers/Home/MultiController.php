@@ -105,7 +105,7 @@ public function multi_update(Request $request ,$id){
         $image->delete();
         $notification = array(
 
-            'message' => 'Image updated sucesssfullly!!',
+            'message' => 'Image delete sucesssfullly!!',
             'alert-type'=> 'success'
            );
      

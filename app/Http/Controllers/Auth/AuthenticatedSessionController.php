@@ -25,17 +25,29 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request): RedirectResponse
     {
-        $request->authenticate();
+        
+        try {
+            $request->authenticate();
 
-        $request->session()->regenerate();
+            $request->session()->regenerate();
+    
+            $notification = array(
+    
+                'message' => 'Admin login sucesssfullly!!',
+                'alert-type'=> 'success'
+            );
+    
+            return redirect()->intended(RouteServiceProvider::HOME)->with($notification);
+        } catch (\Throwable $th) {
+            $notification = array(
+    
+                'message' => 'Incorrect information!!',
+                'alert-type'=> 'info'
+            );
+            return redirect()->back()->with($notification)->with('error','Invalid information, Please enter Authenticate info!!');
 
-        $notification = array(
-
-            'message' => 'Admin login sucesssfullly!!',
-            'alert-type'=> 'success'
-        );
-
-        return redirect()->intended(RouteServiceProvider::HOME)->with($notification);
+        }
+       
     }
 
     /**
