@@ -7,6 +7,7 @@ use App\Http\Controllers\Home\HomeSlideController;
 use App\Http\Controllers\Home\AboutController;
 use App\Http\Controllers\Home\MultiController;
 use App\Http\Controllers\Home\ProtfolioController;
+use App\Http\Controllers\Home\BlogController;
 
 
 
@@ -76,6 +77,17 @@ Route::controller(ProtfolioController::class)->group(function () {
     
   
 }); 
+////Blog Category///
+Route::controller(BlogController::class)->group(function () {
+    Route::get('/all-blog',[BlogController::class,'all_blog'])->name('all.blog');
+    Route::get('/add-blog',[BlogController::class,'add_blog'])->name('add.blog');
+    Route::post('/save-blog',[BlogController::class,'save_blog'])->name('save.blog');
+    Route::get('/edit-blog-{id}',[BlogController::class,'edit_blog'])->name('edit.blog');
+    Route::get('/delete-blog-{id}',[BlogController::class,'delete_blog'])->name('delete.blog');
+    Route::post('/update-blog-{id}',[BlogController::class,'update_blog'])->name('update.blog');
+   
+  });
+
 
 
 
