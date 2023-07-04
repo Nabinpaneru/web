@@ -21,15 +21,16 @@ class ProtfolioController extends Controller
         'protfolio_name' => 'required', 
         'protfolio_tittle' => 'required', 
     ]);
-
-    $image= time().'.'.$request->protfolio_image->extension();
-    $file=$request->protfolio_image;
-    Image::make($file)->resize(1020,519)->save(public_path('protfolio/'.$image));
     $protfolio=new protfolio;
+       if($request->protfolio_image){
+        $image= time().'.'.$request->protfolio_image->extension();
+        $file=$request->protfolio_image;
+        Image::make($file)->resize(1020,519)->save(public_path('protfolio/'.$image));
+        $protfolio->protfolio_image=$image;
+       }
     $protfolio->protfolio_name=$request->protfolio_name;
     $protfolio->protfolio_tittle=$request->protfolio_tittle;
     $protfolio->protfolio_description=$request->protfolio_description;
-    $protfolio->protfolio_image=$image;
     $protfolio->save();
     $notification = array(
 
@@ -82,13 +83,13 @@ class ProtfolioController extends Controller
     $protfolio=Protfolio::find($id);
     $old_image=$protfolio->protfolio_image;
     unlink(public_path('protfolio/').$old_image);
-        $protfolio->delete();
-        $notification = array(
-            'message' => 'protfolio deleted sucesssfullly!!',
-            'alert-type'=> 'success'
-           );
+    $protfolio->delete();
+    $notification = array(
+    'message' => 'protfolio deleted sucesssfullly!!',
+    'alert-type'=> 'success'
+    );
      
-          return redirect()->back()->with($notification);
+     return redirect()->back()->with($notification);
 
     
   }

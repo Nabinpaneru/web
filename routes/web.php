@@ -8,6 +8,8 @@ use App\Http\Controllers\Home\AboutController;
 use App\Http\Controllers\Home\MultiController;
 use App\Http\Controllers\Home\ProtfolioController;
 use App\Http\Controllers\Home\BlogController;
+use App\Http\Controllers\Home\BlogcategoryController;
+
 
 
 
@@ -77,7 +79,7 @@ Route::controller(ProtfolioController::class)->group(function () {
     
   
 }); 
-////Blog Category///
+////Blog///
 Route::controller(BlogController::class)->group(function () {
     Route::get('/all-blog',[BlogController::class,'all_blog'])->name('all.blog');
     Route::get('/add-blog',[BlogController::class,'add_blog'])->name('add.blog');
@@ -87,6 +89,18 @@ Route::controller(BlogController::class)->group(function () {
     Route::post('/update-blog-{id}',[BlogController::class,'update_blog'])->name('update.blog');
    
   });
+  ////Blog Category///
+Route::controller(BlogController::class)->group(function () {
+    Route::get('/all-blogcategory',[BlogcategoryController::class,'all_blogcategory'])->name('all.blogcategory');
+    Route::get('/add-blogcategory',[BlogcategoryController::class,'add_blogcategory'])->name('add.blogcategory');
+    Route::post('/save-blogcategory',[BlogcategoryController::class,'save_blogcategory'])->name('save.blogcategory');
+    Route::get('/edit-blogcategory-{id}',[BlogcategoryController::class,'edit_blogcategory'])->name('edit.blogcategory');
+    Route::get('/delete-blogcategory-{id}',[BlogcategoryController::class,'delete_blogcategory'])->name('delete.blogcategory');
+    Route::get('/view-blogcategory-{id}',[BlogcategoryController::class,'view_blogcategory'])->name('view.blogcategory');
+    Route::post('/update-blogcategory-{id}',[BlogcategoryController::class,'update_blogcategory'])->name('update.blogcategory');
+    
+   
+});
 
 
 
